@@ -185,3 +185,30 @@ db.students.find({ $nor: [{ fullTime: true }, { age: { $lte: 22 } }] });
 // not
 db.students.find({ age: { $not: { $gte: 30 } } });
 ```
+
+Index
+
+```js
+// create index
+db.students.createIndex({ name: 1 });
+
+// check execution Stats: docsExamined
+db.students.find({ name: "Larry" }).explain("executionStats");
+
+db.students.getIndexes();
+
+// drop index
+db.students.dropIndex("name_1");
+```
+
+Collections
+
+```js
+show collections
+
+// create collections
+db.createCollection("teachers", {capped:true, size:10000000, max:100}, {autoIndexId; false})
+
+// drop collections
+db.teachers.drop()
+```
