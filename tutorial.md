@@ -212,3 +212,9 @@ db.createCollection("teachers", {capped:true, size:10000000, max:100}, {autoInde
 // drop collections
 db.teachers.drop()
 ```
+
+test
+
+```js
+db.
+```
